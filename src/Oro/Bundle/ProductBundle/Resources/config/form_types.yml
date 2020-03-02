@@ -106,6 +106,13 @@ services:
         calls:
             - [setLogger,  ["@logger"]]
 
+    oro_product.form.type.extension.frontend_product_select:
+        class: 'Oro\Bundle\CustomerBundle\Form\Extension\FrontendProductSelectExtension'
+        arguments:
+            - '@security.token_storage'
+        tags:
+            - { name: form.type_extension, alias: oro_product_select, extended_type: Oro\Bundle\ProductBundle\Form\Type\ProductSelectType }
+
     oro_product.form.type.extension.integer:
         class: 'Oro\Bundle\ProductBundle\Form\Extension\IntegerExtension'
         tags:
