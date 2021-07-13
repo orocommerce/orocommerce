@@ -90,7 +90,7 @@ class CustomerUserListener
     {
         $request = $this->requestStack->getMasterRequest();
 
-        return $request->request->get($name);
+        return $request ? $request->request->get($name) : null;
     }
 
     /**
